@@ -174,7 +174,10 @@ int setUWF(int set)
 	}
 }
 
-
+void openLnk()
+{
+	ShellExecute(NULL, TEXT("open"), TEXT("https://github.com/dmushail/uwf-manager/wiki"), NULL, NULL, SW_SHOWNORMAL);
+}
 
 [STAThread]
 void Main(array<String^>^ args)

@@ -3,6 +3,7 @@
 
 #include "PassForm.h"
 #include "ChangeForm.h"
+#include "About.h"
 
 
 void getUWF(int& c, int& n);
@@ -56,6 +57,9 @@ namespace UWFConfigurationManager {
 
 	private: System::Windows::Forms::ToolStripMenuItem^  changePasswordToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  exitToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  helpToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  aboutForm;
+
 
 
 	protected:
@@ -90,6 +94,8 @@ namespace UWFConfigurationManager {
 			this->fileToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->changePasswordToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->exitToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->helpToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->aboutForm = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
 			this->menuStrip->SuspendLayout();
@@ -215,7 +221,10 @@ namespace UWFConfigurationManager {
 			// menuStrip
 			// 
 			this->menuStrip->BackColor = System::Drawing::SystemColors::InactiveCaption;
-			this->menuStrip->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->fileToolStripMenuItem });
+			this->menuStrip->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+				this->fileToolStripMenuItem,
+					this->helpToolStripMenuItem
+			});
 			this->menuStrip->Location = System::Drawing::Point(0, 0);
 			this->menuStrip->Name = L"menuStrip";
 			this->menuStrip->Size = System::Drawing::Size(299, 24);
@@ -245,6 +254,20 @@ namespace UWFConfigurationManager {
 			this->exitToolStripMenuItem->Size = System::Drawing::Size(168, 22);
 			this->exitToolStripMenuItem->Text = L"Exit";
 			this->exitToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
+			// 
+			// helpToolStripMenuItem
+			// 
+			this->helpToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->aboutForm });
+			this->helpToolStripMenuItem->Name = L"helpToolStripMenuItem";
+			this->helpToolStripMenuItem->Size = System::Drawing::Size(44, 20);
+			this->helpToolStripMenuItem->Text = L"Help";
+			// 
+			// aboutForm
+			// 
+			this->aboutForm->Name = L"aboutForm";
+			this->aboutForm->Size = System::Drawing::Size(152, 22);
+			this->aboutForm->Text = L"About";
+			this->aboutForm->Click += gcnew System::EventHandler(this, &MyForm::aboutForm_Click);
 			// 
 			// MyForm
 			// 
@@ -362,5 +385,10 @@ private: System::Void changePasswordToolStripMenuItem_Click(System::Object^  sen
 
 }
 
+private: System::Void aboutForm_Click(System::Object^  sender, System::EventArgs^  e) {
+
+			 About ^ aboutForm = gcnew About;
+			 aboutForm->ShowDialog();
+}
 };
 }

@@ -87,6 +87,9 @@
     <ClCompile Include="MyForm.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="About.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="ChangeForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -100,6 +103,9 @@
     <ClInclude Include="resource1.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChangeForm.resx">
       <DependentUpon>ChangeForm.h</DependentUpon>
     </EmbeddedResource>
