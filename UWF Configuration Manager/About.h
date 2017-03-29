@@ -67,7 +67,7 @@ namespace UWFConfigurationManager {
 			this->linkLabel1->AutoSize = true;
 			this->linkLabel1->Font = (gcnew System::Drawing::Font(L"Arial", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->linkLabel1->Location = System::Drawing::Point(140, 64);
+			this->linkLabel1->Location = System::Drawing::Point(140, 63);
 			this->linkLabel1->Name = L"linkLabel1";
 			this->linkLabel1->Size = System::Drawing::Size(87, 14);
 			this->linkLabel1->TabIndex = 0;
@@ -80,14 +80,14 @@ namespace UWFConfigurationManager {
 			this->groupBox1->Controls->Add(this->label1);
 			this->groupBox1->Location = System::Drawing::Point(12, 12);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(210, 49);
+			this->groupBox1->Size = System::Drawing::Size(210, 40);
 			this->groupBox1->TabIndex = 1;
 			this->groupBox1->TabStop = false;
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(69, 20);
+			this->label1->Location = System::Drawing::Point(70, 16);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(69, 13);
 			this->label1->TabIndex = 0;
@@ -99,7 +99,7 @@ namespace UWFConfigurationManager {
 			this->copyLabel->AutoSize = true;
 			this->copyLabel->Font = (gcnew System::Drawing::Font(L"Arial", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->copyLabel->Location = System::Drawing::Point(9, 64);
+			this->copyLabel->Location = System::Drawing::Point(9, 63);
 			this->copyLabel->Name = L"copyLabel";
 			this->copyLabel->Size = System::Drawing::Size(125, 14);
 			this->copyLabel->TabIndex = 2;
@@ -109,11 +109,11 @@ namespace UWFConfigurationManager {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::SystemColors::Control;
+			this->BackColor = System::Drawing::SystemColors::ControlLight;
 			this->ClientSize = System::Drawing::Size(234, 86);
 			this->Controls->Add(this->copyLabel);
-			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->linkLabel1);
+			this->Controls->Add(this->groupBox1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedDialog;
 			this->MaximizeBox = false;
 			this->MinimizeBox = false;

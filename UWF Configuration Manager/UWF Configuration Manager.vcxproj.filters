@@ -23,12 +23,6 @@
     <ClInclude Include="MyForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="resource1.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="PassForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -49,14 +43,12 @@
     <EmbeddedResource Include="ChangeForm.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="UWF Configuration Manager1.rc">
+    <EmbeddedResource Include="About.resx">
       <Filter>Resource Files</Filter>
-    </ResourceCompile>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\..\..\Downloads\1490121423_unlocked.ico">
+    <Image Include="Lock.ico">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
