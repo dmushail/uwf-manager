@@ -265,7 +265,7 @@ namespace UWFConfigurationManager {
 			// aboutForm
 			// 
 			this->aboutForm->Name = L"aboutForm";
-			this->aboutForm->Size = System::Drawing::Size(152, 22);
+			this->aboutForm->Size = System::Drawing::Size(107, 22);
 			this->aboutForm->Text = L"About";
 			this->aboutForm->Click += gcnew System::EventHandler(this, &MyForm::aboutForm_Click);
 			// 
