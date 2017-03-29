@@ -99,6 +99,7 @@
     <ClInclude Include="PassForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="About.resx">
@@ -117,6 +118,9 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="Lock.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="UWF Manager.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
