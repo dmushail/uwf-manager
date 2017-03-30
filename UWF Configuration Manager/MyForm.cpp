@@ -88,6 +88,7 @@ int getKey()
 				}
 				else
 				{
+					RegCloseKey(hKey);
 					return defaultPass;
 				}
 			}
