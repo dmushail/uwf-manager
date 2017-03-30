@@ -8,7 +8,7 @@ using namespace System;
 using namespace System::Windows::Forms;
 
 
-// MSDN ExitWindowsEx Example modifieed to restart users PC.
+// MSDN ExitWindowsEx Example modified to restart users PC.
 BOOL MySystemRestart()
 {
 	HANDLE hToken;
@@ -41,7 +41,8 @@ BOOL MySystemRestart()
 }
 
 
-// Hashing algorith from http://stackoverflow.com/questions/98153/whats-the-best-hashing-algorithm-to-use-on-a-stl-string-when-using-hash-map
+// Basic hashing algorith from StackOverflow:
+// http://stackoverflow.com/questions/98153/whats-the-best-hashing-algorithm-to-use-on-a-stl-string-when-using-hash-map
 unsigned int hash(const char* s, unsigned int seed /*= 0*/)
 {
 	unsigned int hash = seed;
@@ -57,19 +58,53 @@ unsigned int hash(const char* s, unsigned int seed /*= 0*/)
 int getKey()
 {
 	HKEY hKey;
+	long regKey = RegOpenKeyEx(HKEY_LOCAL_MACHINE, TEXT("SOFTWARE\\UnifiedGUI\\Static\\"), 0, KEY_ALL_ACCESS | KEY_WOW64_64KEY, &hKey);
 
-	if (RegOpenKeyEx(HKEY_LOCAL_MACHINE, TEXT("SOFTWARE\\UnifiedGUI\\Static\\"), 0, KEY_READ | KEY_WOW64_64KEY, &hKey) != ERROR_SUCCESS)
+	if (regKey != ERROR_SUCCESS)
 	{
-		MessageBox::Show("Unable to open configuration key!", "UWF Manager", MessageBoxButtons::OK, MessageBoxIcon::Error);
-		return 1;
+		if (regKey == ERROR_FILE_NOT_FOUND)
+		{
+			if (MessageBox::Show("Configuration file not found! Would you like to create a new one?", "UWF Manager", MessageBoxButtons::YesNo, MessageBoxIcon::Error) == DialogResult::Yes)
+			{
+				// Create new registry key.
+				if (RegCreateKeyEx(HKEY_LOCAL_MACHINE, TEXT("SOFTWARE\\UnifiedGUI\\Static"), 0, NULL, REG_OPTION_NON_VOLATILE, KEY_WRITE | KEY_WOW64_64KEY, NULL, &hKey, NULL) != ERROR_SUCCESS)
+				{
+					MessageBox::Show("Unable to create a new configuration file!", "UWF Manager", MessageBoxButtons::OK, MessageBoxIcon::Error);
+					return 1;
+				}
+
+				DWORD defaultPass = hash("admin");
+
+				// Set default password.
+				if (RegOpenKeyEx(HKEY_LOCAL_MACHINE, TEXT("SOFTWARE\\UnifiedGUI\\Static\\"), 0, KEY_ALL_ACCESS | KEY_WOW64_64KEY, &hKey) != ERROR_SUCCESS)
+				{
+					MessageBox::Show("Failed to open new configuration file!", "UWF Manager", MessageBoxButtons::OK, MessageBoxIcon::Error);
+					return 1;
+				}
+				else if (RegSetValueEx(hKey, L"UnifiedWriteFilterConfig", 0, REG_DWORD, (LPBYTE)&defaultPass, sizeof(DWORD)) != ERROR_SUCCESS)
+				{
+					MessageBox::Show("Failed to set new configuration!", "UWF Manager", MessageBoxButtons::OK, MessageBoxIcon::Error);
+					return 1;
+				}
+				else
+				{
+					return defaultPass;
+				}
+			}
+			return 0;
+		}
+		MessageBox::Show("Unable to open configuration file!", "UWF Manager", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
+	else
+	{
+		int val;
+		DWORD value_length = sizeof(DWORD);
+		RegQueryValueEx(hKey, TEXT("UnifiedWriteFilterConfig"), NULL, NULL, (LPBYTE)&val, &value_length);
 
-	int val;
-	DWORD value_length = sizeof(DWORD);
-	RegQueryValueEx(hKey, TEXT("UnifiedWriteFilterConfig"), NULL, NULL, (LPBYTE)&val, &value_length);
-
-	RegCloseKey(hKey);
-	return val;
+		RegCloseKey(hKey);
+		return val;
+	}
+	
 }
 
 
