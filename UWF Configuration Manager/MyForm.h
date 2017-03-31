@@ -317,21 +317,21 @@ namespace UWFConfigurationManager {
 				 int c, n;
 				 getUWF(c, n);
 
-				 if (c == 0)
+				 if (c == 1)
 				 {
 					 this->currentBox->Text = "Current Session: Disabled";
 					 this->disableUWF->Checked = true;
 				 }
-				 else if (c == 1)
+				 else if (c == 0)
 				 {
 					 this->currentBox->Text = "Current Session: Enabled";
 					 this->enableUWF->Checked = true;
 				 }
-				 if (n == 0)
+				 if (n == 1)
 				 {
 					 this->nextBox->Text = "Next Session: Disabled";
 				 }
-				 else if (n == 1)
+				 else if (n == 0)
 				 {
 					 this->nextBox->Text = "Next Session: Enabled";
 				 }
@@ -355,16 +355,16 @@ namespace UWFConfigurationManager {
 				 int c, n;
 				 getUWF(c, n);
 
-				 if (this->enableUWF->Checked == true && n == 0)
+				 if (this->enableUWF->Checked == true && n == 1)
 				 {
-					 if (setUWF(1) == 0)
+					 if (setUWF(0) == 0)
 					 {
 						 this->nextBox->Text = "Next Session: Enabled";
 					 }
 				 }
-				 else if (this->disableUWF->Checked == true && n == 1)
+				 else if (this->disableUWF->Checked == true && n == 0)
 				 {
-					 if (setUWF(0) == 0)
+					 if (setUWF(1) == 0)
 					 {
 						 this->nextBox->Text = "Next Session: Disabled";
 					 }

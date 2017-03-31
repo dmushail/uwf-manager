@@ -168,12 +168,12 @@ int setUWF(int set)
 	PVOID OldValue = NULL;
 	Wow64DisableWow64FsRedirection(&OldValue);
 
-	if (set == 1)
+	if (set == 0)
 	{
 		ShExecInfo.lpParameters = L"filter enable";
 	}
 
-	else if (set == 0)
+	else if (set == 1)
 	{
 		ShExecInfo.lpParameters = L"filter disable";
 	}
@@ -201,6 +201,7 @@ int setUWF(int set)
 			}
 			return 0;
 		}
+
 	}
 
 	else
