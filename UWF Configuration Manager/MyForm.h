@@ -51,7 +51,7 @@ namespace UWFConfigurationManager {
 	private: System::Windows::Forms::TextBox^  nextBox;
 	private: System::Windows::Forms::GroupBox^  groupBox1;
 	private: System::Windows::Forms::GroupBox^  groupBox2;
-	private: System::Windows::Forms::TextBox^  textBox1;
+
 	private: System::Windows::Forms::MenuStrip^  menuStrip;
 	private: System::Windows::Forms::ToolStripMenuItem^  fileToolStripMenuItem;
 
@@ -89,7 +89,6 @@ namespace UWFConfigurationManager {
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->nextBox = (gcnew System::Windows::Forms::TextBox());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->menuStrip = (gcnew System::Windows::Forms::MenuStrip());
 			this->fileToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->changePasswordToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -104,11 +103,11 @@ namespace UWFConfigurationManager {
 			// enableUWF
 			// 
 			this->enableUWF->AutoSize = true;
-			this->enableUWF->Font = (gcnew System::Drawing::Font(L"Arial", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->enableUWF->Font = (gcnew System::Drawing::Font(L"Arial", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->enableUWF->Location = System::Drawing::Point(6, 19);
 			this->enableUWF->Name = L"enableUWF";
-			this->enableUWF->Size = System::Drawing::Size(194, 20);
+			this->enableUWF->Size = System::Drawing::Size(170, 19);
 			this->enableUWF->TabIndex = 0;
 			this->enableUWF->TabStop = true;
 			this->enableUWF->Text = L"Enable Unified Write Filter";
@@ -118,11 +117,11 @@ namespace UWFConfigurationManager {
 			// disableUWF
 			// 
 			this->disableUWF->AutoSize = true;
-			this->disableUWF->Font = (gcnew System::Drawing::Font(L"Arial", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->disableUWF->Font = (gcnew System::Drawing::Font(L"Arial", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->disableUWF->Location = System::Drawing::Point(6, 45);
+			this->disableUWF->Location = System::Drawing::Point(6, 44);
 			this->disableUWF->Name = L"disableUWF";
-			this->disableUWF->Size = System::Drawing::Size(197, 20);
+			this->disableUWF->Size = System::Drawing::Size(174, 19);
 			this->disableUWF->TabIndex = 1;
 			this->disableUWF->TabStop = true;
 			this->disableUWF->Text = L"Disable Unified Write Filter";
@@ -131,11 +130,11 @@ namespace UWFConfigurationManager {
 			// applyButton
 			// 
 			this->applyButton->AutoSize = true;
-			this->applyButton->Font = (gcnew System::Drawing::Font(L"Arial", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->applyButton->Font = (gcnew System::Drawing::Font(L"Arial", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->applyButton->Location = System::Drawing::Point(121, 251);
+			this->applyButton->Location = System::Drawing::Point(116, 210);
 			this->applyButton->Name = L"applyButton";
-			this->applyButton->Size = System::Drawing::Size(80, 28);
+			this->applyButton->Size = System::Drawing::Size(75, 25);
 			this->applyButton->TabIndex = 8;
 			this->applyButton->Text = L"Apply";
 			this->applyButton->UseVisualStyleBackColor = true;
@@ -144,11 +143,11 @@ namespace UWFConfigurationManager {
 			// cancelButton
 			// 
 			this->cancelButton->DialogResult = System::Windows::Forms::DialogResult::Cancel;
-			this->cancelButton->Font = (gcnew System::Drawing::Font(L"Arial", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->cancelButton->Font = (gcnew System::Drawing::Font(L"Arial", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->cancelButton->Location = System::Drawing::Point(207, 251);
+			this->cancelButton->Location = System::Drawing::Point(197, 210);
 			this->cancelButton->Name = L"cancelButton";
-			this->cancelButton->Size = System::Drawing::Size(80, 28);
+			this->cancelButton->Size = System::Drawing::Size(75, 25);
 			this->cancelButton->TabIndex = 10;
 			this->cancelButton->Text = L"Cancel";
 			this->cancelButton->UseVisualStyleBackColor = true;
@@ -156,13 +155,13 @@ namespace UWFConfigurationManager {
 			// 
 			// currentBox
 			// 
-			this->currentBox->Font = (gcnew System::Drawing::Font(L"Arial", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->currentBox->Font = (gcnew System::Drawing::Font(L"Arial", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->currentBox->Location = System::Drawing::Point(6, 19);
 			this->currentBox->Multiline = true;
 			this->currentBox->Name = L"currentBox";
 			this->currentBox->ReadOnly = true;
-			this->currentBox->Size = System::Drawing::Size(257, 24);
+			this->currentBox->Size = System::Drawing::Size(248, 25);
 			this->currentBox->TabIndex = 14;
 			this->currentBox->TextChanged += gcnew System::EventHandler(this, &MyForm::currentBox_TextChanged);
 			// 
@@ -172,7 +171,7 @@ namespace UWFConfigurationManager {
 			this->groupBox1->Controls->Add(this->currentBox);
 			this->groupBox1->Location = System::Drawing::Point(12, 27);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(275, 90);
+			this->groupBox1->Size = System::Drawing::Size(260, 88);
 			this->groupBox1->TabIndex = 16;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Write Filter Status";
@@ -180,43 +179,25 @@ namespace UWFConfigurationManager {
 			// 
 			// nextBox
 			// 
-			this->nextBox->Font = (gcnew System::Drawing::Font(L"Arial", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->nextBox->Font = (gcnew System::Drawing::Font(L"Arial", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->nextBox->Location = System::Drawing::Point(6, 49);
+			this->nextBox->Location = System::Drawing::Point(6, 50);
 			this->nextBox->Multiline = true;
 			this->nextBox->Name = L"nextBox";
 			this->nextBox->ReadOnly = true;
-			this->nextBox->Size = System::Drawing::Size(257, 24);
+			this->nextBox->Size = System::Drawing::Size(248, 25);
 			this->nextBox->TabIndex = 15;
 			// 
 			// groupBox2
 			// 
-			this->groupBox2->Controls->Add(this->textBox1);
 			this->groupBox2->Controls->Add(this->enableUWF);
 			this->groupBox2->Controls->Add(this->disableUWF);
-			this->groupBox2->Location = System::Drawing::Point(12, 123);
+			this->groupBox2->Location = System::Drawing::Point(12, 121);
 			this->groupBox2->Name = L"groupBox2";
-			this->groupBox2->Size = System::Drawing::Size(275, 122);
+			this->groupBox2->Size = System::Drawing::Size(260, 78);
 			this->groupBox2->TabIndex = 17;
 			this->groupBox2->TabStop = false;
 			this->groupBox2->Text = L"Write Filter Setting";
-			// 
-			// textBox1
-			// 
-			this->textBox1->BackColor = System::Drawing::SystemColors::InactiveCaption;
-			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox1->Cursor = System::Windows::Forms::Cursors::Arrow;
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Arial", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->textBox1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
-				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->textBox1->Location = System::Drawing::Point(6, 70);
-			this->textBox1->Multiline = true;
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(263, 46);
-			this->textBox1->TabIndex = 2;
-			this->textBox1->Text = L"WARNING: Operating a flash storage device without the use of a write filter can l"
-				L"ead to premature wear of the storage device due to excessive writes.";
 			// 
 			// menuStrip
 			// 
@@ -227,7 +208,7 @@ namespace UWFConfigurationManager {
 			});
 			this->menuStrip->Location = System::Drawing::Point(0, 0);
 			this->menuStrip->Name = L"menuStrip";
-			this->menuStrip->Size = System::Drawing::Size(299, 24);
+			this->menuStrip->Size = System::Drawing::Size(284, 24);
 			this->menuStrip->TabIndex = 18;
 			this->menuStrip->Text = L"menuStrip";
 			// 
@@ -276,7 +257,7 @@ namespace UWFConfigurationManager {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::InactiveCaption;
 			this->CancelButton = this->cancelButton;
-			this->ClientSize = System::Drawing::Size(299, 291);
+			this->ClientSize = System::Drawing::Size(284, 247);
 			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->cancelButton);

@@ -93,7 +93,7 @@ namespace UWFConfigurationManager {
 			this->groupBox1->Controls->Add(this->passInput);
 			this->groupBox1->Location = System::Drawing::Point(13, 13);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(259, 57);
+			this->groupBox1->Size = System::Drawing::Size(259, 55);
 			this->groupBox1->TabIndex = 3;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Password:";
@@ -113,7 +113,7 @@ namespace UWFConfigurationManager {
 			this->AcceptButton = this->okBtn;
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::SystemColors::InactiveCaption;
+			this->BackColor = System::Drawing::SystemColors::ControlLight;
 			this->ClientSize = System::Drawing::Size(284, 111);
 			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->button2);

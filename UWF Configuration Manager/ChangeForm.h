@@ -79,7 +79,7 @@ namespace UWFConfigurationManager {
 			// 
 			// okBtn
 			// 
-			this->okBtn->Location = System::Drawing::Point(116, 182);
+			this->okBtn->Location = System::Drawing::Point(66, 182);
 			this->okBtn->Name = L"okBtn";
 			this->okBtn->Size = System::Drawing::Size(75, 23);
 			this->okBtn->TabIndex = 0;
@@ -90,7 +90,7 @@ namespace UWFConfigurationManager {
 			// cancelBtn
 			// 
 			this->cancelBtn->DialogResult = System::Windows::Forms::DialogResult::Cancel;
-			this->cancelBtn->Location = System::Drawing::Point(197, 182);
+			this->cancelBtn->Location = System::Drawing::Point(147, 182);
 			this->cancelBtn->Name = L"cancelBtn";
 			this->cancelBtn->Size = System::Drawing::Size(75, 23);
 			this->cancelBtn->TabIndex = 1;
@@ -103,7 +103,7 @@ namespace UWFConfigurationManager {
 			this->currentPassBox->Controls->Add(this->currentPass);
 			this->currentPassBox->Location = System::Drawing::Point(13, 13);
 			this->currentPassBox->Name = L"currentPassBox";
-			this->currentPassBox->Size = System::Drawing::Size(259, 56);
+			this->currentPassBox->Size = System::Drawing::Size(209, 56);
 			this->currentPassBox->TabIndex = 2;
 			this->currentPassBox->TabStop = false;
 			this->currentPassBox->Text = L"Current Password:";
@@ -112,7 +112,7 @@ namespace UWFConfigurationManager {
 			// 
 			this->currentPass->Location = System::Drawing::Point(7, 20);
 			this->currentPass->Name = L"currentPass";
-			this->currentPass->Size = System::Drawing::Size(246, 20);
+			this->currentPass->Size = System::Drawing::Size(196, 20);
 			this->currentPass->TabIndex = 0;
 			this->currentPass->UseSystemPasswordChar = true;
 			// 
@@ -123,7 +123,7 @@ namespace UWFConfigurationManager {
 			this->newPassBox->Controls->Add(this->newPass1);
 			this->newPassBox->Location = System::Drawing::Point(13, 76);
 			this->newPassBox->Name = L"newPassBox";
-			this->newPassBox->Size = System::Drawing::Size(259, 100);
+			this->newPassBox->Size = System::Drawing::Size(209, 100);
 			this->newPassBox->TabIndex = 3;
 			this->newPassBox->TabStop = false;
 			this->newPassBox->Text = L"New Password:";
@@ -132,7 +132,7 @@ namespace UWFConfigurationManager {
 			// 
 			this->newPass2->Location = System::Drawing::Point(7, 64);
 			this->newPass2->Name = L"newPass2";
-			this->newPass2->Size = System::Drawing::Size(246, 20);
+			this->newPass2->Size = System::Drawing::Size(196, 20);
 			this->newPass2->TabIndex = 2;
 			this->newPass2->UseSystemPasswordChar = true;
 			// 
@@ -149,7 +149,7 @@ namespace UWFConfigurationManager {
 			// 
 			this->newPass1->Location = System::Drawing::Point(7, 20);
 			this->newPass1->Name = L"newPass1";
-			this->newPass1->Size = System::Drawing::Size(246, 20);
+			this->newPass1->Size = System::Drawing::Size(196, 20);
 			this->newPass1->TabIndex = 0;
 			this->newPass1->UseSystemPasswordChar = true;
 			// 
@@ -160,7 +160,7 @@ namespace UWFConfigurationManager {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ControlLight;
 			this->CancelButton = this->cancelBtn;
-			this->ClientSize = System::Drawing::Size(284, 218);
+			this->ClientSize = System::Drawing::Size(234, 214);
 			this->Controls->Add(this->newPassBox);
 			this->Controls->Add(this->currentPassBox);
 			this->Controls->Add(this->cancelBtn);
