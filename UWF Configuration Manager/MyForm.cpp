@@ -168,12 +168,12 @@ int setUWF(int set)
 	PVOID OldValue = NULL;
 	Wow64DisableWow64FsRedirection(&OldValue);
 
-	if (set == 0)
+	if (set == 1)
 	{
 		ShExecInfo.lpParameters = L"filter enable";
 	}
 
-	else if (set == 1)
+	else if (set == 0)
 	{
 		ShExecInfo.lpParameters = L"filter disable";
 	}
@@ -209,11 +209,6 @@ int setUWF(int set)
 		MessageBox::Show("Unable to configure the write filter!", "UWF Manager", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		return 1;
 	}
-}
-
-void openLnk()
-{
-	ShellExecute(NULL, TEXT("open"), TEXT("https://github.com/dmushail/uwf-manager/wiki"), NULL, NULL, SW_SHOWNORMAL);
 }
 
 [STAThread]

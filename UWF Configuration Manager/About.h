@@ -1,7 +1,5 @@
 #pragma once
 
-void openLnk();
-
 namespace UWFConfigurationManager {
 
 	using namespace System;
@@ -115,8 +113,5 @@ namespace UWFConfigurationManager {
 
 		}
 #pragma endregion
-	private: System::Void linkLabel1_LinkClicked(System::Object^  sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^  e) {
-				 openLnk();
-	}
 };
 }
